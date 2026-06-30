@@ -2,11 +2,26 @@
 USUARIO = 'admin'
 SENHA = '123'
 ROTINA = 1
+ESTOQUE = []
+
+## -------------------- FUNÇÃO INCLUIR --------------------------------------##
+def incluir():
+    COD = int(input('Digite o código do produto:'))
+    PRO = input('Digite o nome do produto:')
+    QTD = int(input('Digite a quantidade do produto:'))
+    PR = float(input('Digite o preço do produto:'))
+
+    CADASTRO = {'CODIGO':COD,'PRODUTO':PRO,'QUANTIDADE':QTD,'PRECO':PR}
+    ESTOQUE.append (CADASTRO)
+
 ## -------------------- FUNÇÃO MENU -------------------------------------------##
 def menu():
     op = int(input('SELECIONE UMA OPÇÃO\n 1.Incluir item\n 2.Pesquisar item\n 3.Alterar item\n 4.Deletar item\n'))
     if op == 1:
-        print('criar a funcao incluir')
+        while op == 1:
+            incluir()
+            op = int(input('Gostaria de adicionar mais algum produto? 1.Sim - 0.Não'))
+        print(ESTOQUE)
     elif op == 2:
         print('criar a funcao pesquisar')
     elif op == 3:
